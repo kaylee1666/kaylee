@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSC 305 ASSIGNMENT</title>
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+*  {
+    box-sizing: border-box;
+}
+body {
+    font-family: Roboto, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #fff;
+}
+.width-100 {
+    width: 100%;
+}
+.my-work {
+    width: 100%;
+    padding: 20px;
+}
+.work-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    overflow: hidden;
+}
+.profile-name {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+}
+.profile-bio {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    font-style: oblique;
+}
+.about-header {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+    opacity: .6;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.about-desc {
+    padding-top: 15px;
+}
+p { 
+    padding: 0;
+    margin: 0 0 8px;
+}
+.social-link {
+    display: flex;
+    gap: 5px;
+    overflow: hidden;
+        
+}
+.social-link > a {
+    text-decoration: none!important;
+}
+.social-link button {
+    font-size: 15px;
+    background-color: #dfdfdf;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+img {
+    width: inherit;
+    height: inherit;
+    border: 0;
+    object-fit: cover;
+    
+}
+.footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+.pop-outbound {
+    width: 90%;
+    height: 50%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 25%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.pop-outbound > div {
+    with: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+a {
+    text-decoration: none;
+    color: #0081FF;
+    font-weight: 500;
+}
+.hide {
+    display: none;
+}
+</style>
+</head>
+<body>
+<div class="my-work">
+    <div class="work-side">
+        <div class="profile-pic">
+            <img class="" src="kaylee.jpg" alt="" />
+        </div>
+        <div class="profile-name">
+            okolie lawrence osita
+        </div>
+        <div class="profile-bio">
+            computer science student web developer
+        </div>
+        <div class="width-100">
+            <div class="about-header">
+                About Me
+            </div>
+            <div class="about-desc">
+               <p>my name is okolie lawrence am a student in  fouye school and am in  300lev</p>
+               <p>my name is okolie lawrence am a student in  fouye school and am in  300lev</p>
+               <p>my name is okolie lawrence am a student in  fouye school and am in  300lev</p>
+               <p>my name is okolie lawrence am a student in  fouye school and am in  300lev</p>
+            </div>
+        </div>
+        <div class="width-100">
+            <div class="social-link">
+                <button onclick="myFunc(this)" data-href="https://www.facebook.com/share/17cNxWA47i/?mibextid=wwXIfr">Facebook</button>
+                <button onclick="myFunc(this)" data-href="https://www.instagram.com/kayleevibe1">Instagram</button>
+                <button onclick="myFunc(this)" data-href="https://x.com/kayleevega166">Twitter</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        ©️ 2026 Okolie Lawrence Osita. All rights reserved
+    </div>
+</div>
+<div class="pop-outbound hide">
+    <div>
+        <div class="js-change">
+            <div>
+            You're about to open {{text}} link
+            </div>
+            <a href="#">Continue»</a>
+        </div>
+    </div>
+</div>
+<script>
+var hide = document.getElementsByClassName("pop-outbound")[0],
+    pop = document.getElementsByClassName("js-change")[0],
+    out = pop.children[0],
+    outText = pop.children[0].innerHTML,
+    link = pop.getElementsByTagName("a")[0];
+
+
+function myFunc(self) {
+    out.innerHTML = outText.replace(/\{\{text\}\}/, self.innerHTML)
+    
+    link.href = self.dataset.href || "#";
+    
+    hide.classList.remove("hide");
+}
+
+hide.addEventListener("click", function() {
+    hide.classList.add("hide");
+})
+</script>
+</body>
+</html>
